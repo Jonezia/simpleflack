@@ -35,8 +35,11 @@
 
 #channels {
   color: #d2d2d2;
-  padding: 0px 0px 0px 32px;
   font-size: 18px;
+}
+
+#channelstitle {
+  padding-left: 32px;
 }
 
 #displaynamewrapper {

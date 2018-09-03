@@ -6,51 +6,37 @@
   <title>Flack</title>
   <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename="index.css") }}">
   <script src="{{ url_for('static',filename="index.js") }}"></script>
+          <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>
 </head>
 
 <body>
 
 <div id="sidenavwrapper">
   <div id="sidenavuser">
-<<<<<<< HEAD
     <div id="displaynamewrapper" onclick="changedisplayname()">
       <span id="displayname">Display name</span>
     </div>
-=======
-    <div id="displaynamewrapper">
-      <span id="displayname">Display name</span>
-      <span id="sidenavuserdown" onclick="togglesidenavuserdowntooltip()">
-      &#9662;
-        <span id="sidenavuserdowntooltip">
-          <div>Change display name</div>
-          <div>Logout</div>
-        </span>
-      </span>
-    </div>
-    <div id="username">{{ username }}</div>
->>>>>>> 931cd3b5fca09dd292363710786e880f5bad74ec
   </div>
   <div id="sidenavcontent">
     <div id="sidenavchannels">
       <div id="channels">
-        Channels
+        <span id="channelstitle">Channels</span>
         <span id="channelsplus">
         +
           <span id="channelsplustooltip">
             Create a channel
           </span>
         </span>
-      </div>
-      <a>Channel 1</a>
-      <a>Channel 2</a>
-      <a>Channel 3</a>
+      {% for channel in channels %}
+        <a href="{{ url_for('channel', channelname=channel)}}">{{channel}}</a>
+      {% endfor %}
     </div>
 </div>
 
 <div id="mainwrapper">
-  <div id="mainbar">Channel name</div>
+  <div id="mainbar">{{ channelname }}</div>
   <div id="mainmessages">
-    <p>Element 3 asdfawwfwafawfwafawfawfwfdawdfasdfawfawfawfawdfawdfa asdfawwfwafawfwafawfawfwfdawdfasdfawfawfawfawdfawdfaasdfawwfwafawfwafawfawfwfdawdfasdfawfawfawfawdfawdfaasdfawwfwafawfwafawfawfwfdawdfasdfawfawfawfawdfawdfaasdfawwfwafawfwafawfawfwfdawdfasdfawfawfawfawdfawdfaasdfawwfwafawfwafawfawfwfdawdfasdfawfawfawfawdfawdfa</p>
+    <p>Element 3</p>
     <p>Element 2</p>
     <p>Element 1</p>
   </div>
